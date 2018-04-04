@@ -1,3 +1,5 @@
+/* ----------------  一些常用工具  ----------------- */
+
 // deepclone
 const deepclone = (obj) => {
   let newObj = obj instanceof Array ? [] : {}
@@ -9,6 +11,24 @@ const deepclone = (obj) => {
   return newObj
 }
 
+// clone array
+
+// mixin（js 基于原型链继承，区别基于类继承）
+// 解决多重继承问题： 1. 结构复杂  2. 优先顺序模糊  3. 功能冲突（重名）
+// ===> 解决方案：子类按顺序覆盖父类
+const mixin = (dest, mixins) => {
+  // 将 dest 添加到 mixins 最后，保证子类方法不被覆盖
+  const constructors = [...mixins, dest]
+  const newPrototype = {}
+  constructors.forEach(element => {
+    for (let prop in element) {
+      newPrototype[prop] = element[prop]
+    }
+  })
+  dest.prototype = newPrototype
+}
+
+/* ----------------  经典排序方法  --------------- */
 // bubble sort
 // 通过对相邻数比较，将大的慢慢向后放完成排列
 const bubbleSort = (arr) => {
@@ -44,7 +64,19 @@ const selectionSort = (arr) => {
 }
 
 // insertion sort
-// 通过与左右相邻位比较大小进行插入排序
+// 通过与左位比较，找到当前值应该插入的位置进行排序
 const insertionSort = (arr) => {
-  
+  let len = arr.length, newArr = [...arr], preIndex, current
+  for(let i = 1; i < len; i++) {
+    preIndex = i - 1
+    current = newArr[i]
+    // 将比当前值大的前值全部向前移动一位
+    while(preIndex >= 0 && newArr[preIndex] > current) {
+      newArr[preIndex + 1] = newArr[preIndex]
+      preIndex--
+    }
+    // 将当前值插入到排序位
+    newArr[preIndex + 1] = current
+  }
+  return newArr
 }
