@@ -21,8 +21,9 @@ const mixin = (dest, mixins) => {
   const constructors = [...mixins, dest]
   const newPrototype = {}
   constructors.forEach(element => {
-    for (let prop in element) {
-      newPrototype[prop] = element[prop]
+    const proto = element.prototype
+    for (let prop in proto) {
+      newPrototype[prop] = proto[prop]
     }
   })
   dest.prototype = newPrototype
