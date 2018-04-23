@@ -40,6 +40,8 @@ const bubbleSort = (arr) => {
   const len = arr.length
   const newArr = [...arr]
   let temp
+
+  console.time('冒泡排序耗时:')
   for(let i = 0; i < len; i++) {
     for(let j = i; j < len - 1; j++) {
       if (newArr[j] > newArr[j + 1]) {
@@ -49,6 +51,8 @@ const bubbleSort = (arr) => {
       }
     }
   }
+  console.timeEnd('冒泡排序耗时:')
+
   return newArr
 }
 
@@ -61,6 +65,8 @@ const selectionSort = (arr) => {
   const newArr = [...arr]
   let minIndex
   let temp
+
+  console.time('选择排序耗时:')
   for (let i = 0; i < len; i++) {
     minIndex = i
     for (let j = i + 1; j < len; j++) {
@@ -72,6 +78,8 @@ const selectionSort = (arr) => {
     newArr[i] = newArr[minIndex]
     newArr[minIndex] = temp
   }
+  console.timeEnd('选择排序耗时:')
+
   return newArr
 }
 
@@ -84,6 +92,8 @@ const insertionSort = (arr) => {
   const newArr = [...arr]
   let preIndex
   let current
+
+  console.time('插入排序耗时:')
   for(let i = 1; i < len; i++) {
     preIndex = i - 1
     current = newArr[i]
@@ -95,6 +105,8 @@ const insertionSort = (arr) => {
     // 将当前值插入到排序位
     newArr[preIndex + 1] = current
   }
+  console.timeEnd('插入排序耗时:')
+
   return newArr
 }
 
@@ -106,18 +118,28 @@ const insertionSort = (arr) => {
 const shellSort = (arr) => {
   const len = arr.length
   const newArr = [...arr]
-  let gap = Math.floor(len / 2)
+  let gap = 1
   let temp
-  while (gap !== 0) {
-    for (let i = gap; i < len; i++) {
-      temp = arr[i]
-      for (let j = i - gap; j >= 0 && temp < arr[j]; j -= gap) {
-        arr[j + gap] = arr[j]
-      }
-      arr[j + gap] = temp
-    }
-    gap = Math.floor(gap / 2)
+
+  console.time('希尔排序耗时:')
+  // 对不同 len 的数组动态定义间隔序列
+  while(gap < len / 5) {
+    gap = gap * 5 + 1
   }
+  while (gap > 0) {
+    for (let i = gap; i < len; i++) {
+      temp = newArr[i]
+      let j = i - gap
+      for (j; j >= 0 && temp < newArr[j]; j -= gap) {
+        newArr[j + gap] = newArr[j]
+      }
+      newArr[j + gap] = temp
+    }
+    gap = Math.floor(gap / 5)
+  }
+  console.timeEnd('希尔排序耗时:')
+
+  return newArr
 }
 
 /**
@@ -150,6 +172,7 @@ const mergeSort = (arr) => {
   // 递归终止条件为 当 arr.length 为 1 时
   const len = arr.length
   if (len < 2) { return arr }
+
   // 将数组分成小块
   const middle = Math.floor(len / 2)
   const left = arr.slice(0, middle)
