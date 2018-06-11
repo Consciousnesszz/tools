@@ -1,0 +1,464 @@
+{
+  "code": 200,
+  "msg": null,
+  "data": {
+    "goodsModuleId": 7627,
+    "goodsModuleName": "新教材精讲",
+    "percent": 0.0,
+    "teachers": [
+      {
+        "teacherId": 587,
+        "teacherName": "程庭龙",
+        "imageUrl": "http://import.highso.org.cn/hximg/attachment-extension-image/2016-12-26/1482739027464_70795.png"
+      }
+    ],
+    "videos": [],
+    "goodsModuleDetailByTrackResponse": {
+      "goodsCatalogId": 9,
+      "liveByTrackResponses": [
+        {
+          "liveByMothResponses": [
+            {
+              "suitDate": "201705",
+              "liveResponses": [
+                {
+                  "id": 31845,
+                  "liveName": "经济精讲第二轮1",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1494586800000,
+                  "liveEndTime": 1494595800000,
+                  "status": 2,
+                  "type": 1,
+                  "webcastResponse": {
+                    "id": 29069,
+                    "liveId": 31845,
+                    "webcastId": "6487b9f06aae484aa5a089b0c4e06cc3",
+                    "attendeeToken": "397954",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 7500,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566624,
+                  "playbackItems": [
+                    {
+                      "playbackId": 23307,
+                      "webcastId": 29069,
+                      "playbackUrlId": "31321b06ad8e48bf89e7ba2d3d0a271e",
+                      "playbackToken": "397954",
+                      "totalTime": 7500
+                    }
+                  ]
+                },
+                {
+                  "id": 31871,
+                  "liveName": "经济精讲第二轮2",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1494846000000,
+                  "liveEndTime": 1494855000000,
+                  "status": 2,
+                  "type": 1,
+                  "webcastResponse": {
+                    "id": 29095,
+                    "liveId": 31871,
+                    "webcastId": "3a160a2f303a4c3f825c45a150fbe677",
+                    "attendeeToken": "704126",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 9264,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566619,
+                  "playbackItems": [
+                    {
+                      "playbackId": 23309,
+                      "webcastId": 29095,
+                      "playbackUrlId": "ecedbc6dcdad416c8d006802436a1b99",
+                      "playbackToken": "704126",
+                      "totalTime": 7283
+                    }
+                  ]
+                },
+                {
+                  "id": 32155,
+                  "liveName": "经济精讲第二轮3",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1495623600000,
+                  "liveEndTime": 1495632600000,
+                  "status": 2,
+                  "type": 1,
+                  "webcastResponse": {
+                    "id": 29379,
+                    "liveId": 32155,
+                    "webcastId": "99579523dce240729fbddb719737cfa0",
+                    "attendeeToken": "368546",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 7773,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566613,
+                  "playbackItems": [
+                    {
+                      "playbackId": 22103,
+                      "webcastId": 29379,
+                      "playbackUrlId": "5b2672ca936346b3a733e536050e3403",
+                      "playbackToken": "368546",
+                      "totalTime": 7772
+                    }
+                  ]
+                },
+                {
+                  "id": 32157,
+                  "liveName": "经济精讲第二轮4",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1495710000000,
+                  "liveEndTime": 1495717200000,
+                  "status": 2,
+                  "type": 1,
+                  "webcastResponse": {
+                    "id": 29381,
+                    "liveId": 32157,
+                    "webcastId": "bafc3bff6f3a45e8ba9c6ee649759c82",
+                    "attendeeToken": "930532",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 6913,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566608,
+                  "playbackItems": [
+                    {
+                      "playbackId": 22135,
+                      "webcastId": 29381,
+                      "playbackUrlId": "9dbe5e4bdd1843c79f122441168c284d",
+                      "playbackToken": "930532",
+                      "totalTime": 6899
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "suitDate": "201706",
+              "liveResponses": [
+                {
+                  "id": 33039,
+                  "liveName": "经济精讲第二轮5",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1496746800000,
+                  "liveEndTime": 1496754585000,
+                  "status": 2,
+                  "type": 1,
+                  "webcastResponse": {
+                    "id": 30263,
+                    "liveId": 33039,
+                    "webcastId": "f3ff0e5322c04fa1a931eff337102ca8",
+                    "attendeeToken": "000223",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 7602,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566602,
+                  "playbackItems": [
+                    {
+                      "playbackId": 22885,
+                      "webcastId": 30263,
+                      "playbackUrlId": "7b70ea380b6740a1b203a4be4ad7c4c2",
+                      "playbackToken": "000223",
+                      "totalTime": 7465
+                    }
+                  ]
+                },
+                {
+                  "id": 33041,
+                  "liveName": "经济精讲第二轮6",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1496833200000,
+                  "liveEndTime": 1496842260000,
+                  "status": 2,
+                  "type": 1,
+                  "webcastResponse": {
+                    "id": 30265,
+                    "liveId": 33041,
+                    "webcastId": "ef69223ef2494f688844b608147000c1",
+                    "attendeeToken": "800896",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 9054,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566595,
+                  "playbackItems": [
+                    {
+                      "playbackId": 22989,
+                      "webcastId": 30265,
+                      "playbackUrlId": "8f48d7dee94d474eb750e4de4d5f1974",
+                      "playbackToken": "800896",
+                      "totalTime": 7478
+                    }
+                  ]
+                },
+                {
+                  "id": 32875,
+                  "liveName": "经济精讲第二轮7",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1497610800000,
+                  "liveEndTime": 1497619800000,
+                  "status": 2,
+                  "type": 1,
+                  "webcastResponse": {
+                    "id": 30099,
+                    "liveId": 32875,
+                    "webcastId": "0faeda29eff74706bc941e55a659ad2a",
+                    "attendeeToken": "737837",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 8214,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566587,
+                  "playbackItems": [
+                    {
+                      "playbackId": 25545,
+                      "webcastId": 30099,
+                      "playbackUrlId": "e9f7cd08a7154d52a7999a096b8d9d25",
+                      "playbackToken": "737837",
+                      "totalTime": 7279
+                    }
+                  ]
+                },
+                {
+                  "id": 33259,
+                  "liveName": "经济精讲第二轮8",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1497870000000,
+                  "liveEndTime": 1497879000000,
+                  "status": 2,
+                  "type": 1,
+                  "webcastResponse": {
+                    "id": 30483,
+                    "liveId": 33259,
+                    "webcastId": "719e5974d5a046d799e1f282a8f95fba",
+                    "attendeeToken": "713746",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 9692,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566581,
+                  "playbackItems": [
+                    {
+                      "playbackId": 25539,
+                      "webcastId": 30483,
+                      "playbackUrlId": "69b75a35e75f48f8acdc79ebdc768cad",
+                      "playbackToken": "713746",
+                      "totalTime": 7233
+                    }
+                  ]
+                },
+                {
+                  "id": 34299,
+                  "liveName": "经济精讲第二轮9",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1498820400000,
+                  "liveEndTime": 1498829400000,
+                  "status": 2,
+                  "type": 1,
+                  "webcastResponse": {
+                    "id": 31523,
+                    "liveId": 34299,
+                    "webcastId": "28dfc3cb78e448bfadbcd40e54176b9e",
+                    "attendeeToken": "135375",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 8671,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566576,
+                  "playbackItems": [
+                    {
+                      "playbackId": 24793,
+                      "webcastId": 31523,
+                      "playbackUrlId": "b415d1a5c8904bcea85919da17fffd47",
+                      "playbackToken": "135375",
+                      "totalTime": 7207
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "suitDate": "201707",
+              "liveResponses": [
+                {
+                  "id": 34307,
+                  "liveName": "经济精讲第二轮10",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1499079600000,
+                  "liveEndTime": 1499086800000,
+                  "status": 2,
+                  "type": 1,
+                  "webcastResponse": {
+                    "id": 31531,
+                    "liveId": 34307,
+                    "webcastId": "4ab4154c32974217b26579a8deb75082",
+                    "attendeeToken": "384236",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 7790,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566571,
+                  "playbackItems": [
+                    {
+                      "playbackId": 25525,
+                      "webcastId": 31531,
+                      "playbackUrlId": "3760b8f2fa5f4c74bae716832f1423bb",
+                      "playbackToken": "384236",
+                      "totalTime": 6694
+                    }
+                  ]
+                },
+                {
+                  "id": 34329,
+                  "liveName": "经济精讲第二轮11",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1499338800000,
+                  "liveEndTime": 1499347800000,
+                  "status": 2,
+                  "type": 9,
+                  "webcastResponse": {
+                    "id": 31553,
+                    "liveId": 34329,
+                    "webcastId": "cb1cc273bb1c448daeb25ae4096f5a9e",
+                    "attendeeToken": "983612",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 7538,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566565,
+                  "playbackItems": [
+                    {
+                      "playbackId": 25515,
+                      "webcastId": 31553,
+                      "playbackUrlId": "279d397300af4cf3b53a37c7b390d9ff",
+                      "playbackToken": "983612",
+                      "totalTime": 6271
+                    }
+                  ]
+                },
+                {
+                  "id": 34351,
+                  "liveName": "经济精讲第二轮12",
+                  "categoryId": 9,
+                  "subjectId": 1,
+                  "speaker": "程庭龙",
+                  "liveStartTime": 1499425200000,
+                  "liveEndTime": 1499434200000,
+                  "status": 2,
+                  "type": 9,
+                  "webcastResponse": {
+                    "id": 31575,
+                    "liveId": 34351,
+                    "webcastId": "2ee6393a064841c686b0ec1e44e925b7",
+                    "attendeeToken": "255060",
+                    "playBack": 1,
+                    "playBackTime": 1,
+                    "totalTime": 8869,
+                    "progress": 0
+                  },
+                  "subjectName": "经济",
+                  "progress": 0,
+                  "serviceProvider": 0,
+                  "attendLive": false,
+                  "todayTimestamp": 1527070566559,
+                  "playbackItems": [
+                    {
+                      "playbackId": 25513,
+                      "webcastId": 31575,
+                      "playbackUrlId": "b43148812bb24942a22760d8d617fead",
+                      "playbackToken": "255060",
+                      "totalTime": 7038
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "purchased": true,
+      "finishLiveTotal": 12,
+      "liveTotal": 5
+    }
+  }
+}

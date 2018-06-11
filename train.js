@@ -109,15 +109,18 @@ const shellSort = (arr) => {
   let gap = Math.floor(len / 2)
   let temp
   while (gap !== 0) {
+    // 对间隔为 gap 的序列进行插入排序
     for (let i = gap; i < len; i++) {
-      temp = arr[i]
-      for (let j = i - gap; j >= 0 && temp < arr[j]; j -= gap) {
-        arr[j + gap] = arr[j]
+      temp = newArr[i]
+      for (let j = i - gap; j >= 0 && temp < newArr[j]; j -= gap) {
+        newArr[j + gap] = newArr[j]
       }
-      arr[j + gap] = temp
+      newArr[j + gap] = temp
     }
+    // gap 依次减小至 1，最后对整体进行插入排序
     gap = Math.floor(gap / 2)
   }
+  return newArr
 }
 
 /**
