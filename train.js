@@ -37,23 +37,24 @@ const mixin = (dest, mixins) => {
  * 通过对相邻数比较，将大的慢慢向后放完成排列
  */
 const bubbleSort = (arr) => {
-  const len = arr.length
-  const newArr = [...arr]
+  // 新建数组避免操作原数组
+  const sortArr = [...arr]
+  const len = sortArr.length
   let temp
 
   console.time('冒泡排序耗时:')
   for(let i = 0; i < len; i++) {
     for(let j = i; j < len - 1; j++) {
-      if (newArr[j] > newArr[j + 1]) {
-        temp = newArr[j]
-        newArr[j] = newArr[j + 1]
-        newArr[j + 1] = temp
+      if (sortArr[j] > sortArr[j + 1]) {
+        temp = sortArr[j]
+        sortArr[j] = sortArr[j + 1]
+        sortArr[j + 1] = temp
       }
     }
   }
   console.timeEnd('冒泡排序耗时:')
 
-  return newArr
+  return sortArr
 }
 
 /**
@@ -61,8 +62,9 @@ const bubbleSort = (arr) => {
  * 通过每一次选择余下最小的进行排列
  */
 const selectionSort = (arr) => {
-  const len = arr.length
-  const newArr = [...arr]
+  // 新建数组避免操作原数组
+  const sortArr = [...arr]
+  const len = sortArr.length
   let minIndex
   let temp
 
@@ -70,17 +72,17 @@ const selectionSort = (arr) => {
   for (let i = 0; i < len; i++) {
     minIndex = i
     for (let j = i + 1; j < len; j++) {
-      if (newArr[minIndex] > newArr[j]) {
+      if (sortArr[minIndex] > sortArr[j]) {
         minIndex = j
       }
     }
-    temp = newArr[i]
-    newArr[i] = newArr[minIndex]
-    newArr[minIndex] = temp
+    temp = sortArr[i]
+    sortArr[i] = sortArr[minIndex]
+    sortArr[minIndex] = temp
   }
   console.timeEnd('选择排序耗时:')
 
-  return newArr
+  return sortArr
 }
 
 /**
@@ -88,26 +90,27 @@ const selectionSort = (arr) => {
  * 通过与左位比较，找到当前值应该插入的位置进行排序
  */
 const insertionSort = (arr) => {
-  const len = arr.length
-  const newArr = [...arr]
+  // 新建数组避免操作原数组
+  const sortArr = [...arr]
+  const len = sortArr.length
   let preIndex
   let current
 
   console.time('插入排序耗时:')
   for(let i = 1; i < len; i++) {
     preIndex = i - 1
-    current = newArr[i]
+    current = sortArr[i]
     // 将比当前值大的前值全部向前移动一位
-    while(preIndex >= 0 && newArr[preIndex] > current) {
-      newArr[preIndex + 1] = newArr[preIndex]
+    while(preIndex >= 0 && sortArr[preIndex] > current) {
+      sortArr[preIndex + 1] = sortArr[preIndex]
       preIndex--
     }
     // 将当前值插入到排序位
-    newArr[preIndex + 1] = current
+    sortArr[preIndex + 1] = current
   }
   console.timeEnd('插入排序耗时:')
 
-  return newArr
+  return sortArr
 }
 
 /**
@@ -116,8 +119,9 @@ const insertionSort = (arr) => {
  * 间隔逐趟减小，使得整个数组基本有序，再对整体进行一次插入排序
  */
 const shellSort = (arr) => {
-  const len = arr.length
-  const newArr = [...arr]
+  // 新建数组避免操作原数组
+  const sortArr = [...arr]
+  const len = sortArr.length
   let gap = 1
   let temp
 
@@ -128,18 +132,18 @@ const shellSort = (arr) => {
   }
   while (gap > 0) {
     for (let i = gap; i < len; i++) {
-      temp = newArr[i]
+      temp = sortArr[i]
       let j = i - gap
-      for (j; j >= 0 && temp < newArr[j]; j -= gap) {
-        newArr[j + gap] = newArr[j]
+      for (j; j >= 0 && temp < sortArr[j]; j -= gap) {
+        sortArr[j + gap] = sortArr[j]
       }
-      newArr[j + gap] = temp
+      sortArr[j + gap] = temp
     }
     gap = Math.floor(gap / 5)
   }
   console.timeEnd('希尔排序耗时:')
 
-  return newArr
+  return sortArr
 }
 
 /**
@@ -179,4 +183,34 @@ const mergeSort = (arr) => {
   const right = arr.slice(middle)
   // 进行递归 merge
   return merge(mergeSort(left), mergeSort(right))
+}
+
+/**
+ * quick sort（归并排序）
+ * 快速排序使用分治法来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：
+ *
+ * <1>.从数列中挑出一个元素，称为 "基准"（pivot）；--> 通常取 list 中间位
+ * <2>.重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。
+ *     在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；
+ * <3>.递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。
+ */
+const quickSort = (arr) => {
+  if (arr.length <= 1) {return arr}
+  // 新建数组避免操作原数组
+  const sortArr = [ ...arr ]
+
+  // 将基准值取出，否则会多次放入 right（splice 方法返回数组）
+  const pivot = sortArr.splice(Math.floor(sortArr.length / 2), 1)[0]
+  const left = []
+  const right = []
+
+  sortArr.map(item => {
+    if (item < pivot) {
+      left.push(item)
+    } else {
+      right.push(item)
+    }
+  })
+
+  return quickSort(left).concat([pivot], quickSort(right))
 }
