@@ -1,7 +1,6 @@
 // 测试数组排序
 import { expect } from 'chai'
-import { bubbleSort, selectionSort, insertionSort, shellSort, mergeSort, quickSort } from '../src/sortFunc.js'
-import * as sortFunc from '../src/sortFunc.js'
+import * as sortFunc from '../src/sortFunc'
 
 describe('测试排序方法', function () {
   for (let prop in sortFunc) {

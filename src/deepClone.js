@@ -1,7 +1,7 @@
 /**
  * deepclone
  */
-export default deepclone = (obj) => {
+export default function deepClone(obj) {
   const newObj = obj instanceof Array ? [] : {}
   // 返回基本类型参数
   if (typeof obj !== 'object') { return obj }
