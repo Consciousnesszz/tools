@@ -226,7 +226,7 @@ export const heapSort = (arr) => {
   // 新建数组避免操作原数组
   const sortArr = [...arr]
 
-  const heapSize = sortArr.length
+  let heapSize = sortArr.length
   let temp
 
   // 循环生成大顶堆（ Math.floor(heapSize / 2) - 1 为二叉树倒数第二层最右侧下标）
