@@ -4,6 +4,7 @@
  * 通过对相邻数比较，将大的慢慢向后放完成排列
  */
 export const bubbleSort = (arr) => {
+  if (arr.length <= 1) { return arr }
   // 新建数组避免操作原数组
   const sortArr = [...arr]
   const len = sortArr.length
@@ -29,6 +30,7 @@ export const bubbleSort = (arr) => {
  * 通过每一次选择余下最小的进行排列
  */
 export const selectionSort = (arr) => {
+  if (arr.length <= 1) { return arr }
   // 新建数组避免操作原数组
   const sortArr = [...arr]
   const len = sortArr.length
@@ -57,6 +59,7 @@ export const selectionSort = (arr) => {
  * 通过与左位比较，找到当前值应该插入的位置进行排序
  */
 export const insertionSort = (arr) => {
+  if (arr.length <= 1) { return arr }
   // 新建数组避免操作原数组
   const sortArr = [...arr]
   const len = sortArr.length
@@ -86,6 +89,7 @@ export const insertionSort = (arr) => {
  * 间隔逐趟减小，使得整个数组基本有序，再对整体进行一次插入排序
  */
 export const shellSort = (arr) => {
+  if (arr.length <= 1) { return arr }
   // 新建数组避免操作原数组
   const sortArr = [...arr]
   const len = sortArr.length
@@ -140,6 +144,7 @@ const merge = (left, right) => {
   return result
 }
 export const mergeSort = (arr) => {
+  if (arr.length <= 1) { return arr }
   // 递归终止条件为 当 arr.length 为 1 时
   const len = arr.length
   if (len < 2) { return arr }
@@ -180,4 +185,61 @@ export const quickSort = (arr) => {
   })
 
   return quickSort(left).concat([pivot], quickSort(right))
+}
+
+/**
+ * heap sort(堆排序)
+ * 堆排序是一种利用堆这种数据结构来排序的选择排序。
+ * 堆是一个近似完全二叉树的结构，其特性为：子结点的键值或索引总是小于（或者大于）它的父节点。
+ *
+ * <1>.将初始待排序关键字序列(R1,R2....Rn)构建成大顶堆(子节点值小于父节点值的堆)，此堆为初始的无序区；
+ * <2>.将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,......Rn-1)和新的有序区(Rn),且满足R[1,2...n-1]<=R[n]；
+ * <3>.由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,......Rn-1)调整为新堆，然后再次将R[1]与无序区最后一个元素交换，
+ *     得到新的无序区(R1,R2....Rn-2)和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为n-1，则整个排序过程完成。
+ */
+// 维护堆的顶部为无序堆中的最大值
+const heapify = (arr, index, len) => {
+  // 生成 3 个元素的小堆（二叉树下标的规律）
+  const left = index * 2 + 1
+  const right = index * 2 + 2
+  let largest = index
+  let temp
+
+  // 获取小堆中最大的元素下标
+  if (left < len && arr[left] > arr[largest]) {
+    largest = left
+  }
+  if (right < len && arr[right] > arr[largest]) {
+    largest = right
+  }
+
+  // 将最大元素置换到顶部，继续比较下一层
+  if (largest !== index) {
+    temp = arr[index];
+    arr[index] = arr[largest];
+    arr[largest] = temp;
+    heapify(arr, largest, len);
+  }
+}
+export const heapSort = (arr) => {
+  if (arr.length <= 1) { return arr }
+  // 新建数组避免操作原数组
+  const sortArr = [...arr]
+
+  const heapSize = sortArr.length
+  let temp
+
+  // 循环生成大顶堆（ Math.floor(heapSize / 2) - 1 为二叉树倒数第二层最右侧下标）
+  for (let i = Math.floor(heapSize / 2) - 1; i >= 0; i--) {
+    heapify(sortArr, i, heapSize)
+  }
+
+  // 将最大值替换到最后，并将剩余元素中最大值替换到顶部
+  for (let j = heapSize - 1; j >= 1; j--) {
+    temp = sortArr[0];
+    sortArr[0] = sortArr[j];
+    sortArr[j] = temp;
+    heapify(sortArr, 0, --heapSize);
+  }
+  return sortArr
 }
