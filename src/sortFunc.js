@@ -243,3 +243,46 @@ export const heapSort = (arr) => {
   }
   return sortArr
 }
+
+/**
+ * counting sort(计数排序)
+ * 计数排序(Counting sort)是一种稳定的排序算法。
+ * 计数排序使用一个额外的数组C，其中第i个元素是待排序数组A中值等于i的元素的个数。
+ * 然后根据数组C来将A中的元素排到正确的位置。** 它只能对整数进行排序。 **
+ */
+export const countingSort = (arr) => {
+  // 例：arr [3, 1, 5, 5]
+  if (arr.length <= 1) { return arr }
+
+  const len = arr.length // 4
+  const sort = []
+  const count = []
+  let min = arr[0]
+  let max = arr[0]
+
+  for (let i = 0; i < len; i++) {
+    // 记录最大最小值
+    if (min > arr[i]) { min = arr[i] } // 1
+    if (max < arr[i]) { max = arr[i] } // 5
+
+    // 记录相同数字出现的次数
+    // count = [undefind, 1, undefind, 1, undefind, 2]
+    count[arr[i]] = count[arr[i]] ? count[arr[i]] + 1 : 1
+  }
+
+  // 累加 count，记录填充后每个 key 结束的数组 length
+  // 例： count = [undefind, 1, 1, 2, 2, 4]
+  for (let j = min; j < max; j++) {
+    count[j + 1] = (count[j] || 0) + (count[j + 1] || 0)
+  }
+
+  // 循环取得原数值
+  for (let k = 0; k < len; k++) {
+    // 按结束length - 1 取得下标挨个放入排序数组
+    sort[count[arr[k]] - 1] = arr[k]
+    // 使用一次之后记录的 length -= 1
+    count[arr[k]]--
+  }
+
+  return sort
+}
