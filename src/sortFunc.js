@@ -249,6 +249,14 @@ export const heapSort = (arr) => {
  * 计数排序(Counting sort)是一种稳定的排序算法。
  * 计数排序使用一个额外的数组C，其中第i个元素是待排序数组A中值等于i的元素的个数。
  * 然后根据数组C来将A中的元素排到正确的位置。** 它只能对整数进行排序。 **
+ *
+ * 运行时间：
+ *    当输入的元素是n 个0到k之间的整数时，它的运行时间是 O(n + k)。
+ * 优点：
+ *    计数排序不是比较排序，排序的速度快于任何比较排序算法。
+ * 缺点：
+ *    由于用来计数的数组C的长度取决于待排序数组中数据的范围（等于待排序数组的最大值与最小值的差加上1），
+ *    这使得计数排序对于数据范围很大的数组，需要大量时间和内存。
  */
 export const countingSort = (arr) => {
   // 例：arr [3, 1, 5, 5]
@@ -266,12 +274,12 @@ export const countingSort = (arr) => {
     if (max < arr[i]) { max = arr[i] } // 5
 
     // 记录相同数字出现的次数
-    // count = [undefind, 1, undefind, 1, undefind, 2]
+    // count = [empty, 1, empty, 1, empty, 2]
     count[arr[i]] = count[arr[i]] ? count[arr[i]] + 1 : 1
   }
 
   // 累加 count，记录填充后每个 key 结束的数组 length
-  // 例： count = [undefind, 1, 1, 2, 2, 4]
+  // 例： count = [empty, 1, 1, 2, 2, 4]
   for (let j = min; j < max; j++) {
     count[j + 1] = (count[j] || 0) + (count[j + 1] || 0)
   }
