@@ -294,3 +294,66 @@ export const countingSort = (arr) => {
 
   return sort
 }
+
+/**
+ * bucket sort(桶排序)
+ * 桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。
+ * 桶排序 (Bucket sort)的工作的原理：
+ *    假设输入数据服从均匀分布，将数据分到有限数量的桶里，每个桶再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排序）
+ *
+ * 关于桶的数量：
+ *    桶排序最好情况下使用线性时间O(n)，桶排序的时间复杂度，取决与对各个桶之间数据进行排序的时间复杂度，因为其它部分的时间复杂度都为O(n)。
+ *    很显然，桶划分的越小，各个桶之间的数据越少，排序所用的时间也会越少。但相应的空间消耗就会增大。
+ *
+ * @param  array 数组
+ * @param  num   桶的数量
+ */
+
+export const bucketSort = (arr, num) => {
+  if (arr.lenght <= 1) { return arr }
+
+  const len = arr.length
+  const buckets = []
+  const reg = /^[1-9]+[0-9]*$/  // 以 1-9 开头，0-9 结尾
+  let sort = []
+  let min = arr[0]
+  let max = arr[0]
+  let space
+
+  // 保证 num 存在
+  num = num || (num > 1 && reg.test(num) ? num : 10);
+
+  // 找出最大最小值
+  for (let i = 1; i < len; i++) {
+    if (arr[i] < min) { min = arr[i] }
+    if (arr[i] > max) { max = arr[i] }
+  }
+
+  // 计算每个桶有多大的空间
+  space = (max - min + 1) / num
+
+  for (let j = 0; j < len; j++) {
+    // 计算当前数字应该属于哪个桶
+    let index = Math.floor((arr[j] - min) / space)
+    if (buckets[index]) { // 对非空桶进行插入排序
+      let k = buckets[index].length - 1
+      while (k >= 0 && buckets[index][k] > arr[j]) {
+        buckets[index][k + 1] = buckets[index][k]
+        k--
+      }
+      buckets[index][k + 1] = arr[j]
+    } else { // 初始化空桶
+      buckets[index] = []
+      buckets[index].push(arr[j])
+    }
+  }
+
+  // 将所有的桶结合
+  for (let n = 0; n < num; n++) {
+    if (buckets[n]) {
+      sort = sort.concat(buckets[n])
+    }
+  }
+
+  return sort
+}
