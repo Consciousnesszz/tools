@@ -357,3 +357,76 @@ export const bucketSort = (arr, num) => {
 
   return sort
 }
+
+/**
+ * radix sort(基数排序)
+ * 基数排序也是非比较的排序算法，对每一位进行排序，从最低位开始排序，复杂度为O(kn),n 为数组长度，k 为数组中的数的最大的位数
+ *
+ * 基数排序有两种方法：
+ *  MSD 从高位开始进行排序
+ *  LSD 从低位开始进行排序
+ *
+ * 基数排序适用于：
+ *  (1)数据范围较小，建议在小于1000
+ *  (2)每个数值都要大于等于0
+ *
+ * @param  arr 待排序数组
+ * @param  maxDigit 最大位数
+ */
+
+export const radixSort = (arr, maxDigit) => {
+  if (arr.length <= 1) { return arr }
+
+  const sort = [ ...arr ]
+  const len = sort.length
+  const bucket = []
+
+  // 获取最大位数
+  if (!maxDigit) {
+    maxDigit = 1
+    for (let i = 0; i < len; i++) {
+      let digit = 1
+      let curr = sort[i]
+      while (curr / 10 >= 1) {
+        digit += 1
+        curr /= 10
+      }
+      if (digit > maxDigit) { maxDigit = digit }
+    }
+  }
+
+  for (let j = 0, dev = 1, mod = 10; j < maxDigit; j++, dev *= 10, mod *= 10) {
+    for (let k = 0; k < len; k++) {
+      // 计算 数组低位 的 index，并放入对应桶中
+      let index = parseInt((sort[k] % mod) / dev)
+      if (!bucket[index]) {
+        bucket[index] = []
+      }
+      bucket[index].push(sort[k])
+    }
+
+    // 将 当前位排序完成后的值 放入原数组，进行下一位的排序
+    let pos = 0
+    for (let m = 0; m < bucket.length; m++) {
+      let value = null
+      if (bucket[m]) {
+        while (value = bucket[m].shift()) {
+          sort[pos] = value
+          pos++
+        }
+      }
+    }
+  }
+
+  return sort
+}
+
+/**
+ * 总结
+ * 计数排序 vs 桶排序 vs 基数排序
+ * 这三种排序算法都利用了桶的概念，但对桶的使用方法上有明显差异：
+ *
+ * 计数排序：利用数组 index，每个桶只存储单一键值
+ * 桶排序：均匀分配 最大值到最小值之间的差值，让每个桶存储一定范围的数值
+ * 基数排序：根据键值的每位数字来分配桶（个位，十位。。。）
+ */

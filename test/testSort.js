@@ -12,16 +12,16 @@ describe('测试排序方法', function () {
         expect(sortFunc[prop]([1])).to.be.deep.equal([1])
       })
       it('正序数组应该不做更改', function () {
-        expect(sortFunc[prop]([1, 2, 3, 5, 6, 8, 9])).to.be.deep.equal([1, 2, 3, 5, 6, 8, 9])
+        expect(sortFunc[prop]([1, 2, 3, 5, 6, 8, 9, 12, 25])).to.be.deep.equal([1, 2, 3, 5, 6, 8, 9, 12, 25])
       })
       it('倒序数组应该排列成为正序', function () {
-        expect(sortFunc[prop]([9, 8, 7, 6, 5, 4, 3])).to.be.deep.equal([3, 4, 5, 6, 7, 8, 9])
+        expect(sortFunc[prop]([99, 15, 9, 8, 7, 6, 5, 4, 3])).to.be.deep.equal([3, 4, 5, 6, 7, 8, 9, 15, 99])
       })
       it('乱序数组应该排列成为正序', function () {
-        expect(sortFunc[prop]([6, 8, 7, 9, 4, 3, 2])).to.be.deep.equal([2, 3, 4, 6, 7, 8, 9])
+        expect(sortFunc[prop]([6, 8, 7, 9, 17, 30, 4, 3, 2])).to.be.deep.equal([2, 3, 4, 6, 7, 8, 9, 17, 30])
       })
       it('重复元素数组应该排序正常', function () {
-        expect(sortFunc[prop]([6, 8, 7, 9, 9, 3, 2])).to.be.deep.equal([2, 3, 6, 7, 8, 9, 9])
+        expect(sortFunc[prop]([6, 8, 7, 88, 77, 77, 9, 9, 3, 2])).to.be.deep.equal([2, 3, 6, 7, 8, 9, 9, 77, 77, 88])
       })
     })
   }
