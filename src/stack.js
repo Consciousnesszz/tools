@@ -34,7 +34,6 @@ export class Stack {
 }
 
 // 栈的应用：进制转换，平衡圆括号，汉诺塔
-
 /**
  * 进制转换
  * @param decNumber 需要转换的数字
