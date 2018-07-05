@@ -1,4 +1,4 @@
-// 测试数组排序
+// 测试栈结构
 import { expect } from 'chai'
 import { Stack, baseConverter, isBracketBalanced, hanoi } from '../src/stack'
 

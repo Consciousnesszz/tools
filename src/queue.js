@@ -1,19 +1,34 @@
 /**
  * 队列（先进先出）
  * --> 优化：带有优先级的队列
- * 
+ *
  * 队列的应用：
  * 主要用在和时间有关的地方，如：
  *    作为缓冲区，调整 事件/数据 处理频率。在此基础上，实现如多线程，进程调度等功能。
- */ 
+ */
 
 export class Queue {
   constructor(items) {
     this.items = items || []
   }
 
+  enqueue(item) {
+    this.items.push(item)
+  }
+
+  dequeue() {
+    return this.items.shift()
+  }
+
+  front() {
+    return this.items[0]
+  }
+
+  /*
   // 进入队列需要有 优先级 属性
   enqueue(item, priority = 0) {
+    this.items.push(item)
+
     const newItem = {
       item,
       priority,
@@ -38,6 +53,7 @@ export class Queue {
   front() {
     return this.items[0].item
   }
+  */
 
   isEmpty() {
     return this.items.length === 0
