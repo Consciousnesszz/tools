@@ -92,7 +92,7 @@ export function isBracketBalanced(str) {
 /**
  * 汉诺塔
  * 利用栈后进先出，来模拟汉诺塔规则中的柱子
- * @param num 需要移动的层数
+ * @param num    需要移动的层数
  * @param source 源头栈
  * @param buffer 缓冲栈
  * @param target 目标栈
