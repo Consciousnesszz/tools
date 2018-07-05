@@ -1,4 +1,8 @@
-// 栈，具有特殊后进先出行为（LIFO）的数组
+/**
+ * 栈 --> 具有特殊后进先出行为（LIFO）的数组
+ * 
+ * 栈的应用：函数调用和返回，数字转字符，表达式求值等等
+ */ 
 export class Stack {
   constructor(items) {
     this.items = items || []
@@ -33,7 +37,6 @@ export class Stack {
   }
 }
 
-/*-----  栈的应用：进制转换，平衡圆括号，汉诺塔  -----*/
 /**
  * 进制转换
  * @param decNumber 需要转换的数字
