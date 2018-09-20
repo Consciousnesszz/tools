@@ -75,7 +75,7 @@ export const insertionSort = (arr) => {
       sortArr[preIndex + 1] = sortArr[preIndex]
       preIndex--
     }
-    // 将当前值插入到排序位
+    // 将当前值插入到排序位（+1 抵消 while 循环最后用于判断的 --）
     sortArr[preIndex + 1] = current
   }
   // console.timeEnd('插入排序耗时:')
