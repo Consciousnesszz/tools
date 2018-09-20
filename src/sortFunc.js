@@ -144,11 +144,10 @@ const merge = (left, right) => {
   return result
 }
 export const mergeSort = (arr) => {
-  if (arr.length <= 1) { return arr }
   // 递归终止条件为 当 arr.length 为 1 时
-  const len = arr.length
-  if (len < 2) { return arr }
+  if (arr.length <= 1) { return arr }
 
+  const len = arr.length
   // 将数组分成小块
   const middle = Math.floor(len / 2)
   const left = arr.slice(0, middle)
